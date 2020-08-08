@@ -14,18 +14,6 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-#from course import views #>>>>>this is also one of the way to add module ,even we follow another method (#1)
 
-#from course import views as cv #1  
-# we have another method also follow (#2)
-from course.views import learn_python
-from course.views import learn_django
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    #path('learndj/', views.learn_django),(#1rel)
-    #path('learnpy/', cv.learn_python),(#2 rel)
-    path('learnpy/', learn_python),
-    path('learndj/', learn_django)
-
-]
+from django.urls import path, include
+from django.conf import sett
